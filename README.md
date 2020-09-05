@@ -33,8 +33,6 @@ in your browser go to [http://localhost:4200](http://localhost:4200)
 
 - `npm run build`
 
-### Use Chrome version 85 min !!!!
-
 ## Tests
 
 - `npm run lint`
