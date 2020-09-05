@@ -5,7 +5,7 @@
 git clone https://github.com/JosephFC1995/angular-design-init
 
 # change directory
-cd angular-example-routing
+cd angular-design-init
 
 # install the repo with npm
 npm install
