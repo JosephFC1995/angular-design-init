@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { faEye, faBullseye, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import * as moment from 'moment';
 
@@ -15,12 +15,31 @@ export class HomeComponent implements OnInit {
   now;
   menuMovil;
 
+  @ViewChild('stickyMenu') menuElement: ElementRef;
+
+  sticky: boolean = false;
+  elementPosition: any;
+
   constructor() {
     this.menuMovil = false
     this.now = moment().lang("es");
   }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit() {
+    this.elementPosition = this.menuElement.nativeElement.offsetTop;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  handleScroll() {
+    const windowScroll = window.pageYOffset;
+    if (windowScroll > this.elementPosition) {
+      this.sticky = true;
+    } else {
+      this.sticky = false;
+    }
   }
 
   openMenu(): void {

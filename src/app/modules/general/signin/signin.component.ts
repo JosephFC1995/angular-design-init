@@ -27,4 +27,8 @@ export class SigninComponent implements OnInit {
     console.warn('Your order has been submitted', customerData);
   }
 
+  resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
+  }
+
 }

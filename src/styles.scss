@@ -18,11 +18,25 @@ body {
 .header {
   &--principal {
     background: #373e68;
+    transition: 0.5s background;
     &.floating {
       position: absolute;
       z-index: 2;
       width: 100%;
       background: transparent;
+    }
+    &.sticky {
+      position: fixed;
+      top: 0;
+      overflow: hidden;
+      z-index: 10;
+      width: 100%;
+      background: #373e68;
+      .header--logo {
+        img {
+          height: 70px;
+        }
+      }
     }
   }
   &--user {
@@ -56,6 +70,7 @@ body {
   &--logo {
     img {
       height: 80px;
+      transition: 0.5s height;
       @media (max-width: 768px) {
         height: 60px;
       }
@@ -316,6 +331,12 @@ body {
         input {
           margin-left: 10px;
         }
+      }
+      &--recaptcha {
+        margin-bottom: 1rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
       }
       &--combite {
         display: flex;

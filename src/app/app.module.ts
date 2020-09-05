@@ -14,6 +14,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 import { FormGroup, ReactiveFormsModule, FormsModule, FormBuilder } from '@angular/forms';
 import { AdminComponent } from './modules/general/admin/admin.component';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AdminComponent } from './modules/general/admin/admin.component';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
+    RecaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
