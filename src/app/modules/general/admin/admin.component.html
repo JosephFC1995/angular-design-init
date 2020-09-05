@@ -1,0 +1,112 @@
+<header class="header--principal">
+    <div class="container">
+        <div class="header--container">
+            <div class="header--logo">
+                <a routerLink="/">
+                    <img src="assets/images/logo.png" alt="">
+                </a>
+            </div>
+            <div class="header--user d-none d-md-flex">
+                <div class="header--user--avatar">
+                    <fa-icon [icon]="faUser"></fa-icon>
+                </div>
+                <div class="header--user--detail">
+                    <div class="name">
+                        Erick Arrasco Guevara
+                    </div>
+                    <div class="time">
+                        {{now.format('dddd, d [de] MMMM')}}
+                    </div>
+                </div>
+                <div class="header--user--logout">
+                    <fa-icon [icon]="faSignOutAlt"></fa-icon>
+                </div>
+            </div>
+            <div class="header--ico-movil" (click)="openMenu()">
+                <fa-icon [icon]="faBars"></fa-icon>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="menu--overlay" [className]="[ menuMovil ? 'menu--overlay open' : 'menu--overlay']" (click)="closeMenu()">
+</div>
+
+<div class="menu--movil" [className]="[ menuMovil ? 'menu--movil open' : 'menu--movil']">
+    <div class="close--icon">
+        <fa-icon [icon]="faTimes" (click)="closeMenu()"></fa-icon>
+    </div>
+    <div class=" header--user">
+        <div class="header--user--avatar">
+            <fa-icon [icon]="faUser"></fa-icon>
+        </div>
+        <div class="header--user--detail">
+            <div class="name">
+                Erick Arrasco Guevara
+            </div>
+            <div class="time">
+                {{now.format('dddd, d [de] MMMM')}}
+            </div>
+        </div>
+        <div class="header--user--logout">
+            <fa-icon [icon]="faSignOutAlt"></fa-icon>
+        </div>
+    </div>
+</div>
+
+<section class="simple--content">
+
+    <div class="container">
+
+        <div class="title--simple text-center">
+
+            <h1>
+                Menu principal
+            </h1>
+            <div class="sub">
+
+                Seleccione una de las opciones para editar o crear
+
+            </div>
+
+        </div>
+
+        <div class="enlaces--link">
+
+            <div class="link--content">
+
+                <a href="#" class="link--linked">
+                    <fa-icon [icon]="faDesktop"></fa-icon>
+                </a>
+                <h4>
+                    Administrador de sliders
+                </h4>
+            </div>
+
+            <div class="link--content">
+
+                <a href="#" class="link--linked">
+                    <fa-icon [icon]="faClipboardCheck"></fa-icon>
+                </a>
+                <h4>
+                    Administrador de promociones
+                </h4>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="footer white" id="footer">
+    <div class="container center">
+        <div class="footer--copyrate black">
+            <span>
+                Todos los derechos reservados
+            </span>
+        </div>
+
+    </div>
+</footer>

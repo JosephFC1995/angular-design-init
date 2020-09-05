@@ -1,0 +1,70 @@
+<header class="header--principal">
+    <div class="container">
+        <div class="header--container center">
+            <div class="header--logo">
+                <a routerLink="/">
+                    <img src="assets/images/logo.png" alt="">
+                </a>
+            </div>
+
+        </div>
+    </div>
+</header>
+<section class="login--form">
+
+    <div class="container">
+
+        <div class="form--custom">
+
+            <h1>
+                ¡Bienvenido!
+            </h1>
+
+            <form ngNativeValidate [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+                <div class="input--custom">
+                    <label for="usuario">
+                        Usuario o Correo electrónico
+                    </label>
+                    <div class="input--combite">
+                        <input id="usuario" type="text" formControlName="usuario">
+                        <fa-icon [icon]="faEnvelope"></fa-icon>
+                    </div>
+                </div>
+
+                <div class="input--custom">
+                    <label for="password">
+                        Contraseña
+                    </label>
+
+                    <div class="input--combite">
+                        <input id="password" type="text" formControlName="password">
+                        <fa-icon [icon]="faLock" for="password"></fa-icon>
+                    </div>
+                </div>
+                <div class="input--check">
+                    Guardar datos<input type="checkbox" />
+                </div>
+
+
+                <button class="btn--site" type="submit">
+                    Ingresar
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer white" id="footer">
+    <div class="container center">
+        <div class="footer--copyrate black">
+            <span>
+                Todos los derechos reservados
+            </span>
+        </div>
+
+    </div>
+</footer>

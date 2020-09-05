@@ -1,0 +1,166 @@
+<header class="header--principal floating">
+    <div class="container">
+        <div class="header--container ">
+            <div class="header--logo">
+                <a routerLink="/">
+                    <img src="assets/images/logo.png" alt="">
+                </a>
+            </div>
+            <div class="header--menu">
+                <ul class="header--ul">
+                    <li class="header--li">
+                        <a href="#home">
+                            Home
+                        </a>
+                    </li>
+                    <li class="header--li">
+                        <a href="#nosotros">
+                            Nosotros
+                        </a>
+                    </li>
+                    <li class="header--li">
+                        <a href="#promociones">
+                            Promociones
+                        </a>
+                    </li>
+                    <li class="header--li">
+                        <a href="#cobertura">
+                            Cobertura
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header--ico-movil" (click)="openMenu()">
+                <fa-icon [icon]="faBars"></fa-icon>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="menu--overlay" [className]="[ menuMovil ? 'menu--overlay open' : 'menu--overlay']" (click)="closeMenu()">
+</div>
+
+<div class="menu--movil" [className]="[ menuMovil ? 'menu--movil open' : 'menu--movil']">
+    <div class="close--icon">
+        <fa-icon [icon]="faTimes" (click)="closeMenu()"></fa-icon>
+    </div>
+    <div class="header--menu">
+        <ul class="header--ul">
+            <li class="header--li">
+                <a href="#home" (click)="closeMenu()">
+                    Home
+                </a>
+            </li>
+            <li class="header--li">
+                <a href="#nosotros" (click)="closeMenu()">
+                    Nosotros
+                </a>
+            </li>
+            <li class="header--li">
+                <a href="#promociones" (click)="closeMenu()">
+                    Promociones
+                </a>
+            </li>
+            <li class="header--li">
+                <a href="#cobertura" (click)="closeMenu()">
+                    Cobertura
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<section class="section" id="nosotros">
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <img src="{{ slide.img }}" alt="" width="100%">
+            <div class="slick-overlay" [ngStyle]="slide.style"></div>
+            <div class="content-floating">
+
+                <div class="detail--slider">
+                    <div class="detail--slider--ico">
+                        <fa-icon [icon]="slide.ico"></fa-icon>
+                    </div>
+                    <div class="detail--slider--title">
+                        {{slide.title}}
+                    </div>
+                    <div class="detail--slider--text">
+                        {{slide.detail}}
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </ngx-slick-carousel>
+</section>
+
+<section class="section" id="promociones">
+    <div class="container">
+        <div class="title--general text-center">
+            <h1>
+                Nuestras promociones
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-5" *ngFor="let producto of productos">
+                <div class="card--general">
+                    <div class="card--header">
+                        <div class="card--exclusive" *ngIf="producto.exclusive">
+                            <span>
+                                Producto exclusivo
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card--body">
+
+                        <div class="card--body--content">
+
+                            <div class="card--body--image">
+                                <img src="{{producto.image}}" alt="">
+                            </div>
+                            <div class="card--body--detail">
+                                <h4>
+                                    {{producto.name}}
+                                </h4>
+                                <div class="price">
+                                    <span class="currency">
+                                        S/
+                                    </span>
+                                    <span class="price--number">
+                                        {{producto.price}}
+                                    </span>
+                                </div>
+                                <div class="price--regular">
+                                    Precio regular: S/{{producto.regularPrice}}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card--footer">
+                        <span>
+                            {{producto.footer}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer--copyrate">
+            <span>
+                Todos los derechos reservados
+            </span>
+        </div>
+        <div class="footer--image">
+            <a routerLink="/">
+                <img src="assets/images/logo.png" alt="">
+            </a>
+        </div>
+
+    </div>
+</footer>
