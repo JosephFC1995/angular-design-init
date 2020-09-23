@@ -71,7 +71,10 @@
     </div>
 </div>
 
-<section class="section" id="nosotros">
+<section class="section position-relative" id="nosotros">
+    <div class="arrow arrow--prev" (click)="slickModal.slickPrev()">
+        <fa-icon [icon]="faArrowLeft"></fa-icon>
+    </div>
     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let slide of slides" class="slide">
             <img src="{{ slide.img }}" alt="" width="100%">
@@ -94,6 +97,10 @@
             </div>
         </div>
     </ngx-slick-carousel>
+    <div class="arrow arrow--next" (click)="slickModal.slickNext()">
+        <fa-icon [icon]="faArrowRight"></fa-icon>
+    </div>
+    <img src="assets/images/scroll-down.gif" alt="" class="scroll-down">
 </section>
 
 <section class="section" id="promociones">

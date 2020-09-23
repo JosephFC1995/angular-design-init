@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
-import { faEye, faBullseye, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faBullseye, faBars, faTimes, faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import * as moment from 'moment';
 
 @Component({
@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   faBullseye = faBullseye;
   faBars = faBars;
   faTimes = faTimes;
+  faArrowRight = faArrowRight;
+  faArrowLeft = faArrowLeft;
   now;
   menuMovil;
 
@@ -80,6 +82,7 @@ export class HomeComponent implements OnInit {
     "slidesToScroll": 1,
     autoplay: true,
     autoplaySpeed: 4000,
+    'dots': true,
   };
 
   productos = [
