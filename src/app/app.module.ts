@@ -16,6 +16,10 @@ import { FormGroup, ReactiveFormsModule, FormsModule, FormBuilder } from '@angul
 import { AdminComponent } from './modules/general/admin/admin.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 
+import { environment } from './../environments/environment';
+import { GoogleMapsModule } from '@angular/google-maps'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +37,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    RecaptchaModule
+    RecaptchaModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -156,6 +156,22 @@
         </div>
     </div>
 </section>
+<section class="section" id="cobertura">
+    <div class="container">
+        <div class="title--general text-center">
+            <h1>
+                Cobertura
+            </h1>
+        </div>
+
+        <div id="map" class="mb-4">
+            <google-map width="100%" [zoom]="zoom" [options]="options">
+                <map-kml-layer [url]="srcKML"></map-kml-layer>
+            </google-map>
+        </div>
+    </div>
+</section>
+{{srcKML}}
 <footer class="footer" id="footer">
     <div class="container">
         <div class="footer--copyrate">

@@ -16,6 +16,13 @@ export class HomeComponent implements OnInit {
   faArrowLeft = faArrowLeft;
   now;
   menuMovil;
+  zoom = 4;
+  srcKML = 'https://claro-e.josephfc.space/Rutas2019.kml';
+  options: google.maps.MapOptions = {
+    zoomControl: false,
+    scrollwheel: false,
+    disableDoubleClickZoom: false,
+  }
 
   @ViewChild('stickyMenu') menuElement: ElementRef;
 
@@ -28,11 +35,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   ngAfterViewInit() {
     this.elementPosition = this.menuElement.nativeElement.offsetTop;
   }
+
+
 
   @HostListener('window:scroll', ['$event'])
   handleScroll() {
@@ -143,3 +153,4 @@ export class HomeComponent implements OnInit {
   ]
 
 }
+
